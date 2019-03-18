@@ -24,21 +24,7 @@ public class DeadServer extends ServerBase {
     public static String getServerName(Manga m) {
         // before removing deprecated Servers add the correct id/name here
         SparseArray<String> deadServers = new SparseArray<>();
-        deadServers.put(LECTUREENLIGNE, "LectureEnLigne");
-        deadServers.put(ESMANGA, "EsManga");
-        deadServers.put(GOGOCOMIC, "GoGoComic");
-        deadServers.put(MANGATUBE, "Manga-tube");
-        deadServers.put(READCOMICSTV, "ReadComicsTV");
-        deadServers.put(STARKANACOM, "Starkana");
         deadServers.put(TUSMANGAS, "TusMangasOnline");
-        deadServers.put(ESMANGAHERE, "EsMangaHere");
-        deadServers.put(SUBMANGA, "SubManga");
-        deadServers.put(BATOTO, "BatoTo");
-        deadServers.put(BATOTOES, "BatoTo(ES)");
-        deadServers.put(MANGAPEDIA, "Mangapedia");
-        deadServers.put(LEOMANGA, "LeoManga");
-        deadServers.put(MANGAFOX, "MangaFox");
-
 
         return deadServers.get(m.getServerId());
     }

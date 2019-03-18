@@ -151,53 +151,8 @@ public abstract class ServerBase {
     public final int VERSION = 1;
 
     public static final int FROMFOLDER = 1001;
-    public static final int RAWSENMANGA = 21;
-    public static final int MANGAPANDA = 1;
-    public static final int ESMANGAHERE = 3;
-    public static final int MANGAHERE = 4;
-    public static final int MANGAFOX = 5;
-    public static final int SUBMANGA = 6;
-    public static final int ESMANGA = 7;
-    public static final int HEAVENMANGACOM = 8;
-    public static final int STARKANACOM = 9;
-    public static final int ESNINEMANGA = 10;
-    public static final int LECTUREENLIGNE = 11;
-    public static final int KISSMANGA = 12;
-    public static final int ITNINEMANGA = 13;
-    public static final int TUSMANGAS = 14;
-    public static final int MANGAREADER = 15;
-    public static final int DENINEMANGA = 16;
-    public static final int RUNINEMANGA = 17;
-    public static final int MANGATUBE = 18;
-    public static final int MANGAEDENIT = 19;
-    public static final int MYMANGAIO = 20;
     public static final int TUMANGAONLINE = 22;
-    public static final int NINEMANGA = 23;
-    public static final int MANGAEDEN = 24;
-    public static final int LEOMANGA = 25;
-    public static final int BATOTO = 26;
-    public static final int BATOTOES = 27;
-    public static final int JAPSCAN = 28;
-    public static final int READMANGATODAY = 29;
-    public static final int TAADD = 30;
-    public static final int MANGASTREAM = 31;
-    public static final int MANGAKAWAII = 32;
-    public static final int KUMANGA = 33;
-    public static final int MANGAPEDIA = 34;
-    public static final int MANGATOWN = 35;
-    public static final int READMANGAME = 36;
-    public static final int DESUME = 37;
-    public static final int MANGARAWONLINE = 38;
-    public static final int MINTMANGA = 39;
-    public static final int MANGAAE = 40;
-    public static final int NEUMANGATV = 41;
-    public static final int MANGASHIRONET = 42;
-    public static final int FANFOXNET = 43;
-    public static final int READCOMICONLINE = 1000;
-    public static final int READCOMICSTV = 1002;
-    public static final int GOGOCOMIC = 1003;
-    public static final int VIEWCOMIC = 1004;
-    public static final int VERCOMICSCOM = 1005;
+    public static final int TUSMANGAS = 14;
 
     Context context;
     private String serverName;
@@ -226,110 +181,11 @@ public abstract class ServerBase {
     public static ServerBase getServer(int id, Context context) {
         ServerBase serverBase;
         switch (id) {
-            case MANGAPANDA:
-                serverBase = new MangaPanda(context);
-                break;
-            case MANGAHERE:
-                serverBase = new MangaHere(context);
-                break;
-            case FANFOXNET:
-                serverBase = new FanFoxNet(context);
-                break;
-            case HEAVENMANGACOM:
-                serverBase = new HeavenManga(context);
-                break;
-            case MANGAREADER:
-                serverBase = new MangaReader(context);
-                break;
-            case ESNINEMANGA:
-                serverBase = new EsNineManga(context);
-                break;
-            case KUMANGA:
-                serverBase = new Kumanga(context);
-                break;
-            case KISSMANGA:
-                serverBase = new KissManga(context);
-                break;
-            case ITNINEMANGA:
-                serverBase = new ItNineManga(context);
-                break;
             case TUMANGAONLINE:
                 serverBase = new TuMangaOnline(context);
                 break;
-            case DENINEMANGA:
-                serverBase = new DeNineManga(context);
-                break;
-            case RUNINEMANGA:
-                serverBase = new RuNineManga(context);
-                break;
-            case MANGAEDENIT:
-                serverBase = new MangaEdenIt(context);
-                break;
-            case MYMANGAIO:
-                serverBase = new MyMangaIo(context);
-                break;
-            case RAWSENMANGA:
-                serverBase = new RawSenManga(context);
-                break;
-            case MANGAEDEN:
-                serverBase = new MangaEden(context);
-                break;
-            case NINEMANGA:
-                serverBase = new NineManga(context);
-                break;
-            case TAADD:
-                serverBase = new Taadd(context);
-                break;
-            case MANGASTREAM:
-                serverBase = new MangaStream(context);
-                break;
-            case READCOMICONLINE:
-                serverBase = new ReadComicOnline(context);
-                break;
-            //   case LEOMANGA:
-            //        serverBase = new LeoManga(context);
-            //       break;
-            case JAPSCAN:
-                serverBase = new JapScan(context);
-                break;
-            case MANGAKAWAII:
-                serverBase = new MangaKawaii(context);
-                break;
-            case READMANGATODAY:
-                serverBase = new ReadMangaToday(context);
-                break;
-            case VIEWCOMIC:
-                serverBase = new ViewComic(context);
-                break;
-            case MANGATOWN:
-                serverBase = new MangaTown(context);
-                break;
-            case READMANGAME:
-                serverBase = new ReadMangaMe(context);
-                break;
-            case DESUME:
-                serverBase = new DesuMe(context);
-                break;
-            case MANGARAWONLINE:
-                serverBase = new MangaRawOnline(context);
-                break;
-            case MINTMANGA:
-                serverBase = new MintManga(context);
-                break;
             case FROMFOLDER:
                 serverBase = new FromFolder(context);
-                break;
-            case MANGAAE:
-                serverBase = new MangaAE(context);
-                break;
-            case NEUMANGATV:
-                serverBase = new NeuMangaTv(context);
-                break;
-            case VERCOMICSCOM:
-                serverBase = new VerComicsCom(context);
-                break;
-            case MANGASHIRONET:
-                serverBase = new MangaShiroNet(context);
                 break;
             default:
                 serverBase = new DeadServer(context);
@@ -380,39 +236,6 @@ public abstract class ServerBase {
     public static ServerBase[] getServers(Context context) {
         return (new ServerBase[]{
                 new TuMangaOnline(context),
-                new HeavenManga(context),
-                new EsNineManga(context),
-                //new LeoManga(context), temporary remove, if past a month and sever is down then full remove it (04/09/2018)
-                new Kumanga(context),
-                new MangaPanda(context),
-                new MangaReader(context),
-                new MangaHere(context),
-                new FanFoxNet(context),
-                new KissManga(context),
-                new MangaEden(context),
-                new MangaStream(context),
-                new Taadd(context),
-                new NineManga(context),
-                new ReadMangaToday(context),
-                new MangaTown(context),
-                new RuNineManga(context),
-                new DesuMe(context),
-                new MintManga(context),
-                new ReadMangaMe(context),
-                new MyMangaIo(context),
-                new JapScan(context),
-                new MangaKawaii(context),
-                new ItNineManga(context),
-                new MangaEdenIt(context),
-                new DeNineManga(context),
-                new RawSenManga(context),
-                new MangaRawOnline(context),
-                new MangaAE(context),
-                new NeuMangaTv(context),
-                new MangaShiroNet(context),
-                new VerComicsCom(context),
-                new ReadComicOnline(context),
-                new ViewComic(context),
                 new FromFolder(context)
         });
     }
