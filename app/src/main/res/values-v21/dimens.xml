@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="preference_margin">16dp</dimen>
+    <dimen name="padding_recycleview">0dp</dimen>
+</resources>
